@@ -111,10 +111,10 @@
     background:linear-gradient(180deg,transparent,rgba(0,0,0,.72));
   }
   .portrait-cap em{display:block;font-style:normal;color:#C0221E}
-  /* на телефоне подрезаем фото сверху, чтобы статистика влезала в экран */
+  /* на телефоне немного укорачиваем фото и поднимаем кадр — меньше пустого фона сверху, статистика влезает в экран */
   @media(max-width:839px){
-    .portrait{aspect-ratio:auto;height:min(52vh,340px)}
-    .portrait img{object-position:50% 40%}
+    .portrait{aspect-ratio:4/4.4}
+    .portrait img{object-position:50% 55%}
   }
 
   .stats{
