@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Имин Ашурлаев — недвижимость в Дагестане, АН "Этажи"</title>
 <meta name="description" content="Покупка и продажа недвижимости в Махачкале и по всему Дагестану. Новостройки, вторичное жильё, дома. Юридическое сопровождение сделок.">
+
+<!-- Превью при отправке ссылки в WhatsApp / соцсети (Open Graph) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Имин Ашурлаев — недвижимость в Дагестане">
+<meta property="og:description" content="Покупка и продажа квартир, домов и участков в Махачкале и по всему Дагестану. Проверка чистоты, торг, сделка под ключ.">
+<meta property="og:locale" content="ru_RU">
+<!-- ⚠️ После публикации замените на абсолютный адрес: картинка-превью 1200×630 px и адрес сайта -->
+<meta property="og:image" content="https://ВАШ-ДОМЕН/preview.jpg">
+<meta property="og:url" content="https://ВАШ-ДОМЕН/">
+<meta name="twitter:card" content="summary_large_image">
+<!-- favicon: золотая монограмма ИА, встроена прямо в файл -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E0C09'/%3E%3Crect x='6' y='6' width='52' height='52' rx='10' fill='none' stroke='%23C9A24B' stroke-width='2'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' fill='%23E6CC8B' text-anchor='middle'%3E%D0%98%D0%90%3C/text%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -244,7 +257,72 @@
     html{scroll-behavior:auto}
     .reveal{opacity:1;transform:none;transition:none}
     .btn,.card{transition:none}
+    .quiz-step{animation:none}
   }
+
+  /* ---------- квиз ---------- */
+  .quiz-sec{background:var(--surface)}
+  .quiz{
+    margin-top:44px;background:var(--bg);border:1px solid var(--line);
+    border-radius:var(--radius);padding:34px 30px;max-width:780px;
+  }
+  .quiz-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:26px}
+  .quiz-step-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);flex:none}
+  .quiz-bar{flex:1;height:4px;background:var(--surface-2);border-radius:999px;overflow:hidden;max-width:300px}
+  .quiz-bar i{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--gold-soft),var(--gold));transition:width .35s ease}
+  .quiz-step{display:none;animation:quizIn .35s ease}
+  .quiz-step.active{display:block}
+  @keyframes quizIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .quiz-q{font-family:'Cormorant',serif;font-size:27px;font-weight:600;margin-bottom:22px}
+  .quiz-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .quiz-opt{
+    text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:17px 18px;cursor:pointer;color:var(--ink);font-family:inherit;font-size:15px;font-weight:500;
+    transition:border-color .18s,background .18s,transform .18s;display:flex;align-items:center;gap:12px;
+  }
+  .quiz-opt:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .quiz-opt.sel{border-color:var(--gold);background:rgba(201,162,75,.08)}
+  .quiz-opt .dot{width:9px;height:9px;background:var(--gold);transform:rotate(45deg);flex:none;opacity:0;transition:opacity .18s}
+  .quiz-opt.sel .dot{opacity:1}
+  .quiz-fields{display:grid;gap:12px;max-width:440px}
+  .quiz-fields input{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px;color:var(--ink);font-family:inherit;font-size:15px;
+  }
+  .quiz-fields input::placeholder{color:var(--muted)}
+  .quiz-fields input:focus{outline:none;border-color:var(--gold)}
+  .quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px}
+  .quiz-back{background:none;border:none;color:var(--muted);cursor:pointer;font-family:inherit;font-size:14px}
+  .quiz-back:hover{color:var(--gold-soft)}
+  .quiz-summary{font-size:13px;color:var(--muted);margin-top:16px;line-height:1.5}
+  @media(max-width:560px){.quiz{padding:26px 20px}.quiz-opts{grid-template-columns:1fr}.quiz-q{font-size:23px}}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{margin-top:44px;border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;color:var(--ink);
+    font-family:inherit;font-size:17px;font-weight:600;padding:24px 0;
+    display:flex;justify-content:space-between;gap:20px;align-items:center;
+  }
+  .faq-q:hover{color:var(--gold-soft)}
+  .faq-q .plus{flex:none;width:18px;height:18px;position:relative}
+  .faq-q .plus::before,.faq-q .plus::after{content:"";position:absolute;background:var(--gold);border-radius:2px}
+  .faq-q .plus::before{top:8px;left:0;width:18px;height:2px}
+  .faq-q .plus::after{left:8px;top:0;width:2px;height:18px;transition:transform .25s}
+  .faq-item.open .plus::after{transform:scaleY(0)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-a p{color:var(--muted);font-size:15px;padding:0 40px 24px 0}
+  @media(max-width:560px){.faq-a p{padding-right:0}}
+
+  /* ---------- контакты в подвале ---------- */
+  .footer-contacts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .footer-contacts a{
+    display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid var(--line);
+    border-radius:999px;font-size:13.5px;color:var(--ink);transition:border-color .18s,color .18s;
+  }
+  .footer-contacts a:hover{border-color:var(--gold);color:var(--gold-soft)}
+  .footer-contacts svg{width:16px;height:16px;flex:none}
 </style>
 </head>
 <body>
@@ -252,7 +330,7 @@
 <header>
   <div class="wrap header-in">
     <a class="logo" href="#top" aria-label="Наверх">
-      <div class="logo-mark"><span>МА</span></div>
+      <div class="logo-mark"><span>ИА</span></div>
       <div class="logo-text">Имин Ашурлаев<small>Недвижимость · Дагестан</small></div>
     </a>
     <a class="header-phone" data-call href="#">
@@ -283,7 +361,7 @@
         <p class="hero-note">Консультация — <b>бесплатно</b>. Отвечаю в WhatsApp в течение 15 минут.</p>
       </div>
       <div class="portrait reveal">
-        <span class="portrait-init">МА</span>
+        <span class="portrait-init">ИА</span>
         <span class="portrait-hint">место для вашего фото</span>
       </div>
     </div>
@@ -334,9 +412,9 @@
         <p>Договоры, проверка чистоты, расчёты через аккредитив или ячейку, регистрация в Росреестре — всё под контролем.</p>
       </div>
       <div class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
-        <h3>Ипотека и маткапитал</h3>
-        <p>Помогу оформить ипотеку, в том числе семейную и сельскую, использовать материнский капитал и субсидии.</p>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Дистанционные сделки</h3>
+        <p>Покупка и продажа без личного присутствия: показы по видео, проверка документов и безопасные расчёты — удобно тем, кто живёт за пределами Дагестана.</p>
       </div>
     </div>
   </div>
@@ -386,6 +464,72 @@
   </div>
 </section>
 
+<!-- КВИЗ -->
+<section class="quiz-sec" id="quiz">
+  <div class="wrap">
+    <p class="eyebrow reveal">Быстрый подбор</p>
+    <h2 class="display reveal">Подберу варианты под вас — 4 вопроса</h2>
+    <p class="lead reveal">Займёт меньше минуты. В конце отправлю подборку и отвечу в WhatsApp.</p>
+
+    <div class="quiz reveal" id="quizBox">
+      <div class="quiz-top">
+        <span class="quiz-step-label" id="quizLabel">Шаг 1 из 4</span>
+        <div class="quiz-bar"><i id="quizBar"></i></div>
+      </div>
+
+      <!-- шаг 1 -->
+      <div class="quiz-step active" data-step="1">
+        <div class="quiz-q">Что вас интересует?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-key="Задача" data-val="Купить недвижимость"><span class="dot"></span>Купить</button>
+          <button class="quiz-opt" data-key="Задача" data-val="Продать недвижимость"><span class="dot"></span>Продать</button>
+          <button class="quiz-opt" data-key="Задача" data-val="Нужна консультация"><span class="dot"></span>Консультация</button>
+        </div>
+      </div>
+
+      <!-- шаг 2 -->
+      <div class="quiz-step" data-step="2">
+        <div class="quiz-q">Какой объект?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-key="Объект" data-val="Новостройка"><span class="dot"></span>Новостройка</button>
+          <button class="quiz-opt" data-key="Объект" data-val="Вторичное жильё"><span class="dot"></span>Вторичка</button>
+          <button class="quiz-opt" data-key="Объект" data-val="Дом / участок"><span class="dot"></span>Дом / участок</button>
+          <button class="quiz-opt" data-key="Объект" data-val="Пока не определился"><span class="dot"></span>Ещё не решил</button>
+        </div>
+      </div>
+
+      <!-- шаг 3 -->
+      <div class="quiz-step" data-step="3">
+        <div class="quiz-q">Ориентир по бюджету</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-key="Бюджет" data-val="до 3 млн ₽"><span class="dot"></span>до 3 млн ₽</button>
+          <button class="quiz-opt" data-key="Бюджет" data-val="3–5 млн ₽"><span class="dot"></span>3–5 млн ₽</button>
+          <button class="quiz-opt" data-key="Бюджет" data-val="5–8 млн ₽"><span class="dot"></span>5–8 млн ₽</button>
+          <button class="quiz-opt" data-key="Бюджет" data-val="от 8 млн ₽"><span class="dot"></span>от 8 млн ₽</button>
+        </div>
+      </div>
+
+      <!-- шаг 4 -->
+      <div class="quiz-step" data-step="4">
+        <div class="quiz-q">Куда прислать подборку?</div>
+        <div class="quiz-fields">
+          <input type="text" id="quizName" placeholder="Как вас зовут" autocomplete="name">
+          <input type="tel" id="quizPhone" placeholder="Телефон или WhatsApp" autocomplete="tel">
+        </div>
+        <p class="quiz-summary" id="quizSummary"></p>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="quiz-back" id="quizBack" style="visibility:hidden">← Назад</button>
+        <a class="btn btn-gold" id="quizSubmit" href="#" style="display:none">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.06.79.82-2.98-.2-.31A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          Получить подборку
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ОТЗЫВЫ -->
 <section class="reviews">
   <div class="wrap">
@@ -411,6 +555,32 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow reveal">Частые вопросы</p>
+    <h2 class="display reveal">Отвечаю на то, что спрашивают чаще всего</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Сколько стоят ваши услуги?<span class="plus"></span></button>
+        <div class="faq-a"><p>Первая консультация и подбор вариантов — бесплатно. Стоимость услуг фиксируем в договоре до начала работы: никаких скрытых доплат «по ходу». Размер комиссии зависит от типа сделки и обсуждается индивидуально.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Я из другого города — можно провести сделку дистанционно?<span class="plus"></span></button>
+        <div class="faq-a"><p>Да, провожу сделки дистанционно: показы по видео, проверка документов, безопасные расчёты и регистрация права — без вашего личного присутствия в Дагестане.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Как проверяете юридическую чистоту объекта?<span class="plus"></span></button>
+        <div class="faq-a"><p>Проверяю собственников, историю переходов права, обременения и аресты, задолженности и соответствие документов. Если нахожу риск — говорю прямо, даже если это отменит сделку.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">В каких городах и районах вы работаете?<span class="plus"></span></button>
+        <div class="faq-a"><p>Основной регион — Махачкала, Каспийск и пригороды. Беру объекты по всей республике Дагестан. Сомневаетесь, подходит ли ваш случай — просто напишите, подскажу.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ФИНАЛЬНЫЙ CTA -->
 <section class="cta">
   <div class="wrap">
@@ -431,9 +601,29 @@
 </section>
 
 <footer class="site">
-  <div class="wrap footer-in">
-    <div>© <span id="year"></span> Имин Ашурлаев · Недвижимость в Дагестане</div>
-    <div>Махачкала · Каспийск · вся республика</div>
+  <div class="wrap">
+    <div class="footer-contacts">
+      <a data-wa href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.06.79.82-2.98-.2-.31A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+        WhatsApp
+      </a>
+      <a data-call href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span data-phone-display>Позвонить</span>
+      </a>
+      <a id="igLink" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a id="avitoLink" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6.5" cy="7" r="3"/><circle cx="17.5" cy="6" r="2.3"/><circle cx="8" cy="17" r="4"/><circle cx="18" cy="16" r="2.8"/></svg>
+        Авито
+      </a>
+    </div>
+    <div class="footer-in" style="margin-top:24px;border-top:1px solid var(--line);padding-top:22px">
+      <div>© <span id="year"></span> Имин Ашурлаев · Недвижимость в Дагестане</div>
+      <div>Махачкала · Каспийск · вся республика</div>
+    </div>
   </div>
 </footer>
 
@@ -459,7 +649,9 @@
   const CONFIG = {
     phone: "79285181870",
     phoneDisplay: "+7 928 518-18-70",
-    waText: "Здравствуйте! Пишу с вашего сайта, интересует недвижимость."
+    waText: "Здравствуйте! Пишу с вашего сайта, интересует недвижимость.",
+    instagram: "https://instagram.com/ВАШ_ПРОФИЛЬ",
+    avito: "https://www.avito.ru/ВАШ_ПРОФИЛЬ"
   };
 
   const waLink = "https://wa.me/" + CONFIG.phone + "?text=" + encodeURIComponent(CONFIG.waText);
@@ -469,11 +661,75 @@
   document.querySelectorAll("[data-phone-display]").forEach(el => el.textContent = CONFIG.phoneDisplay);
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  const ig = document.getElementById("igLink"); if (ig) ig.href = CONFIG.instagram;
+  const av = document.getElementById("avitoLink"); if (av) av.href = CONFIG.avito;
+
   /* плавное появление блоков при прокрутке */
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  /* ===== квиз ===== */
+  (function () {
+    const box = document.getElementById("quizBox");
+    if (!box) return;
+    const steps = Array.from(box.querySelectorAll(".quiz-step"));
+    const bar = document.getElementById("quizBar");
+    const label = document.getElementById("quizLabel");
+    const back = document.getElementById("quizBack");
+    const submit = document.getElementById("quizSubmit");
+    const summary = document.getElementById("quizSummary");
+    const total = steps.length;
+    let cur = 0;
+    const answers = {};
+
+    function render() {
+      steps.forEach((s, i) => s.classList.toggle("active", i === cur));
+      bar.style.width = ((cur + 1) / total * 100) + "%";
+      label.textContent = "Шаг " + (cur + 1) + " из " + total;
+      back.style.visibility = cur === 0 ? "hidden" : "visible";
+      submit.style.display = cur === total - 1 ? "inline-flex" : "none";
+      if (cur === total - 1) {
+        summary.textContent = Object.entries(answers).map(([k, v]) => k + ": " + v).join("   ·   ");
+      }
+    }
+
+    box.querySelectorAll(".quiz-opt").forEach(opt => {
+      opt.addEventListener("click", () => {
+        const step = opt.closest(".quiz-step");
+        step.querySelectorAll(".quiz-opt").forEach(o => o.classList.remove("sel"));
+        opt.classList.add("sel");
+        answers[opt.dataset.key] = opt.dataset.val;
+        if (cur < total - 1) setTimeout(() => { cur++; render(); }, 220);
+      });
+    });
+
+    back.addEventListener("click", () => { if (cur > 0) { cur--; render(); } });
+
+    submit.addEventListener("click", e => {
+      e.preventDefault();
+      const name = document.getElementById("quizName").value.trim();
+      const phone = document.getElementById("quizPhone").value.trim();
+      let text = "Здравствуйте! Заполнил(а) квиз на сайте.\n";
+      Object.entries(answers).forEach(([k, v]) => { text += k + ": " + v + "\n"; });
+      if (name) text += "Имя: " + name + "\n";
+      if (phone) text += "Телефон: " + phone;
+      window.open("https://wa.me/" + CONFIG.phone + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+    });
+
+    render();
+  })();
+
+  /* ===== FAQ ===== */
+  document.querySelectorAll(".faq-q").forEach(q => {
+    q.addEventListener("click", () => {
+      const item = q.closest(".faq-item");
+      const a = item.querySelector(".faq-a");
+      const open = item.classList.toggle("open");
+      a.style.maxHeight = open ? a.scrollHeight + "px" : null;
+    });
+  });
 </script>
 </body>
 </html>
