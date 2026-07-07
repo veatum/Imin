@@ -11,9 +11,9 @@
 <meta property="og:title" content="Имин Ашурлаев — недвижимость в Дагестане">
 <meta property="og:description" content="ТОП-специалист компании «Этажи». Не «толкаю квадратные метры» — работаю над запросом индивидуально. Покупка, продажа, сделка под ключ.">
 <meta property="og:locale" content="ru_RU">
-<!-- ⚠️ После публикации замените на абсолютный адрес: картинка-превью 1200×630 px и адрес сайта -->
-<meta property="og:image" content="https://ВАШ-ДОМЕН/preview.jpg">
-<meta property="og:url" content="https://ВАШ-ДОМЕН/">
+<!-- Если появится свой домен — замените адреса ниже -->
+<meta property="og:image" content="https://veatum.github.io/Imin/photo.jpg">
+<meta property="og:url" content="https://veatum.github.io/Imin/">
 <meta name="twitter:card" content="summary_large_image">
 <!-- favicon: красная плашка ИА в стиле Этажей -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F0392B'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='26' font-weight='800' fill='%23FFFFFF' text-anchor='middle'%3E%D0%98%D0%90%3C/text%3E%3C/svg%3E">
@@ -105,14 +105,13 @@
     background:linear-gradient(180deg,#3A3E44 0%,#1E2126 70%,#101215 100%);
     display:grid;place-items:center;overflow:hidden;max-width:420px;margin:0 auto;width:100%;
   }
-  .portrait-init{font-size:64px;font-weight:900;color:rgba(255,255,255,.14)}
+  .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
   .portrait-cap{
     position:absolute;left:0;right:0;bottom:0;padding:20px;text-align:center;
     font-weight:800;text-transform:uppercase;font-size:15px;line-height:1.3;color:#fff;
     background:linear-gradient(180deg,transparent,rgba(0,0,0,.55));
   }
   .portrait-cap em{display:block;font-style:normal;color:#FF6A5C}
-  .portrait-hint{position:absolute;top:14px;left:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 
   .stats{
     display:grid;grid-template-columns:repeat(3,1fr);
@@ -341,9 +340,8 @@
         <p class="hero-note">Консультация — <b>бесплатно</b>. Отвечаю в WhatsApp в течение 15 минут.</p>
       </div>
       <div class="portrait reveal">
-        <span class="portrait-hint">место для фото</span>
-        <span class="portrait-init">ИА</span>
-        <div class="portrait-cap">Перестаньте вестись <em>на срочные варианты</em></div>
+        <img src="photo.jpg" alt="Имин Ашурлаев — риелтор компании «Этажи», Махачкала" width="720" height="1280" fetchpriority="high">
+        <div class="portrait-cap">Имин Ашурлаев <em>ТОП-специалист «Этажи»</em></div>
       </div>
     </div>
 
